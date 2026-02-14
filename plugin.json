@@ -1,6 +1,6 @@
 {
-  "name": "RetroDeck Menu",
-  "author": "John Doe",
+  "name": "decky-retrodeck",
+  "author": "Teppichseite",
   "flags": ["debug", "_root"],
   "api_version": 1,
   "publish": {
