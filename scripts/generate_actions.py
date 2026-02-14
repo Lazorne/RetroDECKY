@@ -19,6 +19,167 @@ import requests
 from bs4 import BeautifulSoup
 
 
+# Define action groups with ordering and category assignment
+# Format: category -> list of action_ids in order
+# Prefix action_id with ! to hide it
+ACTION_GROUPS = {
+    "quick": [
+        "display-view-pdf",
+        "quick-load-state",
+        "quick-save-state",
+        "quick-pause-resume",
+        "quick-restart-reset",
+        "!quick-fullscreen-toggle",
+        "quick-swap-screens",
+        "display-change-dual-screens-layout",
+        "!quick-take-screenshot",
+        "quick-escape",
+        "quick-open-menu",
+        "quick-quit-component",
+    ],
+
+    "general": [
+        "general-pause-resume",
+        "general-restart-reset",
+        "general-change-disc-next-disc",
+        "general-open-menu",
+        "general-cheats-onoff",
+        "general-turbo-onoff",
+        "general-take-screenshot",
+        "general-video-recording-onoff",
+    ],
+    
+    "state": [
+        "state-load-state",
+        "state-previous-state",
+        "state-next-state",
+        "state-save-state",
+        "state-undo-load-state",
+        "state-undo-save-state",
+    ],
+    
+    "display": [
+        "display-change-widescreen-aspect-ratio",
+        "display-swap-screens",
+        "display-decrease-resolution-upscale",
+        "display-increase-resolution-upscale",
+        "display-fullscreen-toggle",
+    ],
+    
+    "speed": [
+        "speed-decrease-emulation-speed",
+        "speed-increase-emulation-speed",
+        "speed-reset-emulation-speed",
+        "speed-frame-limit-onoff",
+        "speed-disable-emulation-speed-limit",
+        "speed-fast-forward",
+        "speed-rewind",
+    ],
+    
+    "azahar": [
+        "azahar-load-amiibo",
+        "azahar-remove-amiibo",
+    ],
+    
+    "dolphin": [
+        "dolphin-freelook-mode-onoff",
+        "dolphin-freelook-mode-reset",
+        "dolphin-golf-mode-onoff",
+        "dolphin-wii-sync-button",
+        "dolphin-wiimote-sideways",
+        "dolphin-wiimote-upright",
+        "dolphin-wiimote-sync-player-1",
+        "dolphin-wiimote-sync-player-2",
+        "dolphin-wiimote-sync-player-3",
+        "dolphin-wiimote-sync-player-4",
+    ],
+    
+    "melonds": [
+        "melonds-closeopen-lid",
+        "melonds-sunlight",
+        "melonds-play-microphone",
+    ],
+    
+    "mame": [
+        "mame-service-mode",
+        "mame-service-button-1",
+        "mame-service-button-2",
+        "mame-service-button-3",
+        "mame-service-button-4",
+        "mame-insert-bill-note",
+        "mame-tilt",
+        "mame-tilt-player-1",
+        "mame-tilt-player-2",
+        "mame-tilt-player-3",
+        "mame-tilt-player-4",
+    ],
+    
+    "retroarch": [
+        "retroarch-cheats-onoff",
+        "retroarch-previous-cheat",
+        "retroarch-next-cheat",
+        "retroarch-ai-service-onoff",
+        "retroarch-netplay-host-onoff",
+    ],
+    
+    "steam": [
+        "steam-escape",
+        "steam-enter",
+        "steam-space",
+        "steam-tab",
+        "steam-control",
+        "steam-alt",
+        "steam-shift",
+        "steam-alt-f4",
+        "steam-f1",
+        "steam-f4",
+        "steam-f5",
+        "steam-f8",
+        "steam-f10",
+        "steam-slash",
+    ],
+    
+    "scummvm": [
+        "scummvm-close",
+        "scummvm-open",
+        "scummvm-give",
+        "scummvm-pick-up",
+        "scummvm-use",
+        "scummvm-look-at",
+        "scummvm-move",
+        "scummvm-push-shove",
+        "scummvm-pull-yank",
+        "scummvm-fight",
+    ],
+    
+    "switch": [
+        "switch-load-remove-amiibo",
+        "switch-docked-undocked-mode",
+        "switch-change-gpu-accuracy",
+        "switch-open-menu-ryubing-f4",
+    ],
+}
+
+# Define the order of categories in the output
+# Categories in this list will appear in this order
+# Categories not in this list will appear at the end in alphabetical order
+CATEGORY_ORDER = [
+    "Quick",
+    "General",
+    "State",
+    "Display",
+    "Speed",
+    "Azahar",
+    "Dolphin",
+    "Melonds",
+    "Mame",
+    "Retroarch",
+    "Steam",
+    "Scummvm",
+    "Switch",
+]
+
+
 # Mapping from human-readable keyboard shortcuts to uinput KEY_* format
 # Only includes keys that exist in hotkey.ts, using lowercase keys
 KEY_MAPPING = {
@@ -354,7 +515,7 @@ def modify_actions(actions: List[Dict]) -> List[Dict]:
     
     # Define View Manual action (first in Quick Menu)
     view_manual_action = {
-        "id": "quick-view-pdf",
+        "id": "display-view-pdf",
         "name": "View Manual",
         "category": "Quick",
         "icon": {
@@ -390,6 +551,76 @@ def modify_actions(actions: List[Dict]) -> List[Dict]:
     actions.append(quit_action)
     
     return actions
+
+
+def apply_category_overrides(actions: List[Dict]) -> List[Dict]:
+    """Apply category overrides based on ACTION_GROUPS and filter hidden actions."""
+    # Build a set of hidden action IDs and a mapping for visible actions
+    hidden_actions = set()
+    action_to_group = {}
+    
+    for group_name, action_ids in ACTION_GROUPS.items():
+        for action_id in action_ids:
+            # Check if action is marked as hidden with !
+            if action_id.startswith("!"):
+                actual_id = action_id[1:]  # Remove the ! prefix
+                hidden_actions.add(actual_id)
+            else:
+                action_to_group[action_id] = group_name.capitalize()
+    
+    # Filter out hidden actions and apply category overrides
+    filtered_actions = []
+    for action in actions:
+        action_id = action.get("id", "")
+        
+        # Skip hidden actions
+        if action_id in hidden_actions:
+            continue
+        
+        # Apply category if in a group
+        if action_id in action_to_group:
+            action["category"] = action_to_group[action_id]
+        
+        filtered_actions.append(action)
+    
+    return filtered_actions
+
+
+def sort_actions(actions: List[Dict]) -> List[Dict]:
+    """Sort actions according to ACTION_GROUPS ordering and CATEGORY_ORDER."""
+    # Build a priority map from ACTION_GROUPS, handling ! prefix
+    priority_map = {}
+    group_priority = 0
+    
+    for group_name, action_ids in ACTION_GROUPS.items():
+        for action_priority, action_id in enumerate(action_ids):
+            # Remove ! prefix if present to get actual action ID
+            actual_id = action_id[1:] if action_id.startswith("!") else action_id
+            # Composite key: (group_priority, position_in_group)
+            priority_map[actual_id] = (group_priority, action_priority)
+        group_priority += 1
+    
+    # Build category priority map
+    category_priority = {}
+    for idx, category in enumerate(CATEGORY_ORDER):
+        category_priority[category] = idx
+    
+    def get_sort_key(action: Dict) -> tuple:
+        action_id = action.get("id", "")
+        category = action.get("category", "Uncategorized")
+        
+        # Get category order priority (default to high value if not in list)
+        cat_priority = category_priority.get(category, 999)
+        
+        # Return composite key: (category_priority, group_priority, position_in_group)
+        if action_id in priority_map:
+            group_prio, action_prio = priority_map[action_id]
+            return (cat_priority, group_prio, action_prio)
+        
+        # Actions not in any group go to the end
+        return (cat_priority, 999, 0)
+    
+    return sorted(actions, key=get_sort_key)
 
 
 
@@ -433,6 +664,12 @@ def main():
     actions = parse_html(html)
 
     actions = modify_actions(actions)
+    
+    # Apply category overrides
+    actions = apply_category_overrides(actions)
+    
+    # Sort actions by defined ordering
+    actions = sort_actions(actions)
     
     print(f"Extracted {len(actions)} actions")
     
