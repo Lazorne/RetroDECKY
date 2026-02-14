@@ -26,8 +26,8 @@ export default definePlugin(() => {
   });
 
   return {
-    name: "RetroDeck Menu",
-    titleView: <div className={staticClasses.Title}>RetroDeck Menu</div>,
+    name: "RetroDecky",
+    titleView: <div className={staticClasses.Title}>RetroDecky</div>,
     content: <Content />,
     icon: <FaGamepad />,
     onDismount() {

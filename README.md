@@ -1,9 +1,9 @@
-# RetroDeck Menu
+# RetroDecky
 An Ingame Menu for RetroDeck as Decky Plugin. Allows to use emulator actions without using hotkeys.
 
 <p float="left">
-<img src="./assets/screenshot1.png" alt="RetroDeck Menu Screenshot" width="300"/>
-<img src="./assets/screenshot2.png" alt="RetroDeck Menu Screenshot" width="300"/>
+<img src="./assets/screenshot1.png" alt="RetroDecky Screenshot" width="300"/>
+<img src="./assets/screenshot2.png" alt="RetroDecky Screenshot" width="300"/>
 </p>
 
 ## Goal of the plugin
@@ -27,9 +27,9 @@ The goal of this plugin is to provide a menu which displays only the actions rel
     3. **Build the plugin yourself**
 2. Ensure **RetroDeck Flatpak** is installed on your system
     1. If not installed, you can install it via the **Discover Store** or run: `flatpak install --user flathub net.retrodeck.retrodeck`
-3. Open RetroDeck Menu in the **Steam Quick Access Menu**
+3. Open RetroDecky in the **Steam Quick Access Menu**
 4. Follow the **Setup Guide** displayed in the plugin menu:
-5. To reload the setup status, go to **Decky Settings > Plugins > RetroDeck Menu > Reload**
+5. To reload the setup status, go to **Decky Settings > Plugins > RetroDecky > Reload**
 
 ## Known Issues
 1. Hotkeys which require holding keys like Fast Forward may not work properly yet

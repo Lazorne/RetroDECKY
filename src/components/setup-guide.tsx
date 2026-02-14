@@ -6,7 +6,7 @@ import { useMenuContext } from "../context";
 
 const isDoneIcon = (isDone: boolean | undefined) => isDone ? "✅" : "❌";
 
-const githubUrl = "https://github.com/Teppichseite/decky-retrodeck";
+const githubUrl = "https://github.com/Teppichseite/RetroDecky";
 
 export const SetupGuide = () => {
     const [showGuide, setShowGuide] = useState(false);
@@ -50,7 +50,7 @@ export const RetroDeckNotInstalled = () => {
             </li>
         </ol>
         <div>
-            To reload this page go to <strong>Decky Settings {">"} Plugins {">"} RetroDeck Menu {">"} Reload</strong>
+            To reload this page go to <strong>Decky Settings {">"} Plugins {">"} RetroDecky {">"} Reload</strong>
         </div>
     </div>;
 };

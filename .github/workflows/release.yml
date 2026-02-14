@@ -52,18 +52,18 @@ jobs:
       - name: Build plugin
         run: |
           $(pwd)/cli/decky plugin build $(pwd)
-          unzip "out/decky-retrodeck.zip" -d "out/decky-retrodeck"
+          unzip "out/RetroDecky.zip" -d "out/RetroDecky"
 
       - name: Show files
         run: |
-          ls out/decky-retrodeck.zip
-          7z l out/decky-retrodeck.zip
+          ls out/RetroDecky.zip
+          7z l out/RetroDecky.zip
 
       - name: Publish Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: decky-retrodeck
-          path: out/decky-retrodeck.zip
+          name: RetroDecky
+          path: out/RetroDecky.zip
 
   publish:
     if: startsWith(github.ref, 'refs/tags/v')
@@ -83,10 +83,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            /tmp/artifacts/decky-retrodeck/decky-retrodeck.zip
+            /tmp/artifacts/RetroDecky/RetroDecky.zip
           tag_name: ${{ github.ref_name }}
           body: |
-            RetroDeck Menu
+            RetroDecky
           draft: true
           generate_release_notes: true
           prerelease: ${{ contains(github.ref, 'pre') }}
