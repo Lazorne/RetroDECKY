@@ -24,10 +24,10 @@ export function Game() {
                     style={{ width: "60%", marginTop: '10px' }}
                 />}
                 <div className={staticClasses.PanelSectionTitle} style={{ marginTop: '20px' }}>
-                    {gameEvent.name} - {gameEvent.system_name.toUpperCase()}
+                    {gameEvent.name}
                 </div>
-                <div style={{ marginTop: '5px', marginBottom: '20px' }}>
-                    {gameEvent.emulator_name.join(' - ')}
+                <div style={{ marginBottom: '20px', fontSize: '14px' }}>
+                    {gameEvent.system_name.toUpperCase()}
                 </div>
             </div>
             <ActionsComponent />
