@@ -2,8 +2,9 @@
 An Ingame Menu for RetroDeck as Decky Plugin. Allows to use emulator actions without using hotkeys.
 
 <p float="left">
-<img src="./assets/screenshot1.png" alt="RetroDecky Screenshot" width="300"/>
-<img src="./assets/screenshot2.png" alt="RetroDecky Screenshot" width="300"/>
+<img src="./assets/screenshot1.png" alt="RetroDecky Screenshot" width="200"/>
+<img src="./assets/screenshot2.png" alt="RetroDecky Screenshot" width="200"/>
+<img src="./assets/screenshot3.png" alt="RetroDecky Screenshot" width="200"/>
 </p>
 
 ## Goal of the plugin
