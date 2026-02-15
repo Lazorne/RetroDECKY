@@ -32,7 +32,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "PCSX2 (Standalone)",
@@ -58,8 +58,8 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
-      "Duckstation (Legacy)",
+      "Azahar (Standalone)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "PCSX2 (Standalone)",
@@ -85,8 +85,8 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
-      "Duckstation (Legacy)",
+      "Azahar (Standalone)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "MelonDS (Standalone)",
@@ -112,8 +112,8 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
-      "Duckstation (Legacy)",
+      "Azahar (Standalone)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "MelonDS (Standalone)",
@@ -139,7 +139,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Cemu (Standalone)",
       "MelonDS (Standalone)"
     ]
@@ -162,7 +162,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar"
+      "Azahar (Standalone)"
     ]
   },
   {
@@ -180,15 +180,17 @@
         "KEY_ESC"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
-      "GZDoom",
-      "IkemanGO",
-      "OpenBOR",
+      "GZDoom (Standalone)",
+      "IkemanGO (Standalone)",
+      "OpenBOR (Standalone)",
       "PC-Systems",
       "Ryubing (Standalone)",
-      "Ruffle",
-      "Solarus"
+      "Ruffle (Standalone)",
+      "Solarus (Standalone)"
     ]
   },
   {
@@ -209,11 +211,14 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
-      "Duckstation (Legacy)",
+      "Azahar (Standalone)",
+      "Duckstation (Legacy) (Standalone)",
       "PCSX2 (Standalone)",
       "PPSSPP (Standalone)",
-      "RPCS3",
+      "RPCS3 (Standalone)",
+      "RPCS3 Shortcut (Standalone)",
+      "RPCS3 Game Serial (Standalone)",
+      "RPCS3 Directory (Standalone)",
       "RetroArch"
     ]
   },
@@ -250,10 +255,10 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "MelonDS (Standalone)",
       "PCSX2 (Standalone)",
       "RetroArch"
@@ -277,10 +282,10 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "MelonDS (Standalone)",
       "PCSX2 (Standalone)",
       "RetroArch"
@@ -306,7 +311,7 @@
     "emulators": [
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "RetroArch"
     ]
   },
@@ -328,10 +333,13 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
-      "Duckstation (Legacy)",
+      "Azahar (Standalone)",
+      "Duckstation (Legacy) (Standalone)",
       "PCSX2 (Standalone)",
-      "RPCS3",
+      "RPCS3 (Standalone)",
+      "RPCS3 Shortcut (Standalone)",
+      "RPCS3 Game Serial (Standalone)",
+      "RPCS3 Directory (Standalone)",
       "RetroArch"
     ]
   },
@@ -353,7 +361,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "RetroArch"
     ]
   },
@@ -375,7 +383,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)"
+      "Duckstation (Legacy) (Standalone)"
     ]
   },
   {
@@ -396,10 +404,10 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "MelonDS (Standalone)",
       "PCSX2 (Standalone)",
       "PPSSPP (Standalone)",
@@ -449,7 +457,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "PCSX2 (Standalone)",
@@ -475,7 +483,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "PCSX2 (Standalone)",
@@ -501,7 +509,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "PCSX2 (Standalone)",
@@ -527,7 +535,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
       "PCSX2 (Standalone)",
@@ -575,7 +583,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)"
     ]
@@ -599,7 +607,7 @@
     "systems": "*",
     "emulators": [
       "Dolphin (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "PCSX2 (Standalone)",
       "PrimeHack (Standalone)"
     ]
@@ -622,7 +630,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Cemu (Standalone)",
       "MelonDS (Standalone)"
     ]
@@ -646,7 +654,7 @@
     "systems": "*",
     "emulators": [
       "Dolphin (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "PCSX2 (Standalone)",
       "PrimeHack (Standalone)"
     ]
@@ -670,7 +678,7 @@
     "systems": "*",
     "emulators": [
       "Dolphin (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "PCSX2 (Standalone)",
       "PrimeHack (Standalone)"
     ]
@@ -693,9 +701,9 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Dolphin (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "MelonDS (Standalone)",
       "PCSX2 (Standalone)",
       "PrimeHack (Standalone)"
@@ -719,10 +727,10 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "PCSX2 (Standalone)"
     ]
   },
@@ -744,10 +752,10 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar",
+      "Azahar (Standalone)",
       "Dolphin (Standalone)",
       "Primehack (Standalone)",
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "PCSX2 (Standalone)"
     ]
   },
@@ -769,7 +777,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)"
+      "Duckstation (Legacy) (Standalone)"
     ]
   },
   {
@@ -833,7 +841,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "MelonDS (Standalone)",
       "PCSX2 (Standalone)",
       "RetroArch"
@@ -857,7 +865,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Duckstation (Legacy)",
+      "Duckstation (Legacy) (Standalone)",
       "RetroArch"
     ]
   },
@@ -879,7 +887,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar"
+      "Azahar (Standalone)"
     ]
   },
   {
@@ -900,7 +908,7 @@
     },
     "systems": "*",
     "emulators": [
-      "Azahar"
+      "Azahar (Standalone)"
     ]
   },
   {
@@ -1573,15 +1581,17 @@
         "KEY_ESC"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
-      "GZDoom",
-      "IkemanGO",
-      "OpenBOR",
+      "GZDoom (Standalone)",
+      "IkemanGO (Standalone)",
+      "OpenBOR (Standalone)",
       "PC-Systems",
-      "Ruffle",
+      "Ruffle (Standalone)",
       "Ryubing (Standalone)",
-      "Solarus"
+      "Solarus (Standalone)"
     ]
   },
   {
@@ -1599,14 +1609,16 @@
         "KEY_ENTER"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
-      "GZDoom",
-      "IkemanGO",
-      "OpenBOR",
+      "GZDoom (Standalone)",
+      "IkemanGO (Standalone)",
+      "OpenBOR (Standalone)",
       "PC-Systems",
       "Ryubing (Standalone)",
-      "Solarus"
+      "Solarus (Standalone)"
     ]
   },
   {
@@ -1624,7 +1636,9 @@
         "KEY_SPACE"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1644,7 +1658,9 @@
         "KEY_TAB"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1664,7 +1680,9 @@
         "KEY_LEFTCTRL"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1684,7 +1702,9 @@
         "KEY_LEFTALT"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1704,7 +1724,9 @@
         "KEY_LEFTSHIFT"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1725,7 +1747,9 @@
         "KEY_F4"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1745,7 +1769,9 @@
         "KEY_F1"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1765,7 +1791,9 @@
         "KEY_F4"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1785,7 +1813,9 @@
         "KEY_F5"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1805,7 +1835,9 @@
         "KEY_F8"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1825,7 +1857,9 @@
         "KEY_F10"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1845,7 +1879,9 @@
         "KEY_SLASH"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "PC"
+    ],
     "emulators": [
       "PC-Systems"
     ]
@@ -1865,7 +1901,9 @@
         "KEY_C"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -1885,7 +1923,9 @@
         "KEY_O"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -1905,7 +1945,9 @@
         "KEY_G"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -1925,7 +1967,9 @@
         "KEY_P"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -1945,7 +1989,9 @@
         "KEY_U"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -1965,7 +2011,9 @@
         "KEY_L"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -1985,7 +2033,9 @@
         "KEY_M"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -2005,7 +2055,9 @@
         "KEY_S"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -2025,7 +2077,9 @@
         "KEY_Y"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]
@@ -2045,7 +2099,9 @@
         "KEY_F"
       ]
     },
-    "systems": "*",
+    "systems": [
+      "scummvm"
+    ],
     "emulators": [
       "ScummVM"
     ]

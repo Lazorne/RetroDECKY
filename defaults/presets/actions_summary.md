@@ -5,28 +5,31 @@ This file provides an overview of all actions defined in actions.json.
 ## Emulators Used for Hotkeys
 
 - *
-- Azahar
+- Azahar (Standalone)
 - Cemu (Standalone)
 - Dolphin (Standalone)
-- Duckstation (Legacy)
-- GZDoom
-- IkemanGO
+- Duckstation (Legacy) (Standalone)
+- GZDoom (Standalone)
+- IkemanGO (Standalone)
 - MAME (Standalone)
 - MelonDS (Standalone)
-- OpenBOR
+- OpenBOR (Standalone)
 - PC-Systems
 - PCSX2 (Standalone)
 - PPSSPP (Standalone)
 - PrimeHack (Standalone)
 - Primehack (Standalone)
-- RPCS3
+- RPCS3 (Standalone)
+- RPCS3 Directory (Standalone)
+- RPCS3 Game Serial (Standalone)
+- RPCS3 Shortcut (Standalone)
 - RetroArch
-- Ruffle
+- Ruffle (Standalone)
 - Ryubing (Standalone)
 - ScummVM
-- Solarus
+- Solarus (Standalone)
 
-**Total: 21 emulator(s)**
+**Total: 24 emulator(s)**
 
 ## Categories and Actions
 
@@ -40,35 +43,35 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Load State** (`quick-load-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_A (press)`
-  - Emulators: Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
 
 - **Save State** (`quick-save-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_S (press)`
-  - Emulators: Azahar, Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
+  - Emulators: Azahar (Standalone), Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
 
 - **Pause / Resume** (`quick-pause-resume`)
   - Hotkey: `KEY_LEFTCTRL + KEY_P (press)`
-  - Emulators: Azahar, Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
+  - Emulators: Azahar (Standalone), Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
 
 - **Restart / Reset** (`quick-restart-reset`)
   - Hotkey: `KEY_LEFTCTRL + KEY_R (press)`
-  - Emulators: Azahar, Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
+  - Emulators: Azahar (Standalone), Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
 
 - **Swap Screens** (`quick-swap-screens`)
   - Hotkey: `KEY_LEFTCTRL + KEY_TAB (press)`
-  - Emulators: Azahar, Cemu (Standalone), MelonDS (Standalone)
+  - Emulators: Azahar (Standalone), Cemu (Standalone), MelonDS (Standalone)
 
 - **Change Dual Screens Layout** (`display-change-dual-screens-layout`)
   - Hotkey: `KEY_LEFTCTRL + KEY_L (press)`
-  - Emulators: Azahar
+  - Emulators: Azahar (Standalone)
 
 - **Escape** (`quick-escape`)
   - Hotkey: `KEY_ESC (press)`
-  - Emulators: GZDoom, IkemanGO, OpenBOR, PC-Systems, Ryubing (Standalone), Ruffle, Solarus
+  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ryubing (Standalone), Ruffle (Standalone), Solarus (Standalone)
 
 - **Open Menu** (`quick-open-menu`)
   - Hotkey: `KEY_LEFTCTRL + KEY_M (press)`
-  - Emulators: Azahar, Duckstation (Legacy), PCSX2 (Standalone), PPSSPP (Standalone), RPCS3, RetroArch
+  - Emulators: Azahar (Standalone), Duckstation (Legacy) (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RPCS3 (Standalone), RPCS3 Shortcut (Standalone), RPCS3 Game Serial (Standalone), RPCS3 Directory (Standalone), RetroArch
 
 - **Quit** (`quick-quit-component`)
   - Action: `[exit]`
@@ -81,31 +84,31 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Pause / Resume** (`general-pause-resume`)
   - Hotkey: `KEY_LEFTCTRL + KEY_P (press)`
-  - Emulators: Azahar, Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
+  - Emulators: Azahar (Standalone), Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy) (Standalone), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
 
 - **Restart / Reset** (`general-restart-reset`)
   - Hotkey: `KEY_LEFTCTRL + KEY_R (press)`
-  - Emulators: Azahar, Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
+  - Emulators: Azahar (Standalone), Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy) (Standalone), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
 
 - **Change Disc / Next Disc** (`general-change-disc-next-disc`)
   - Hotkey: `KEY_LEFTCTRL + KEY_D (press)`
-  - Emulators: Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy), RetroArch
+  - Emulators: Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy) (Standalone), RetroArch
 
 - **Open Menu** (`general-open-menu`)
   - Hotkey: `KEY_LEFTCTRL + KEY_M (press)`
-  - Emulators: Azahar, Duckstation (Legacy), PCSX2 (Standalone), RPCS3, RetroArch
+  - Emulators: Azahar (Standalone), Duckstation (Legacy) (Standalone), PCSX2 (Standalone), RPCS3 (Standalone), RPCS3 Shortcut (Standalone), RPCS3 Game Serial (Standalone), RPCS3 Directory (Standalone), RetroArch
 
 - **Cheats On/Off** (`general-cheats-onoff`)
   - Hotkey: `KEY_LEFTCTRL + KEY_C (press)`
-  - Emulators: Duckstation (Legacy), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), RetroArch
 
 - **Turbo On/Off** (`general-turbo-onoff`)
   - Hotkey: `KEY_LEFTCTRL + KEY_T (press)`
-  - Emulators: Duckstation (Legacy)
+  - Emulators: Duckstation (Legacy) (Standalone)
 
 - **Take Screenshot** (`general-take-screenshot`)
   - Hotkey: `KEY_LEFTCTRL + KEY_X (press)`
-  - Emulators: Azahar, Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy), MelonDS (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
+  - Emulators: Azahar (Standalone), Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy) (Standalone), MelonDS (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
 
 - **Video Recording On/Off** (`general-video-recording-onoff`)
   - Hotkey: `KEY_LEFTCTRL + KEY_V (press)`
@@ -118,19 +121,19 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Load State** (`state-load-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_A (press)`
-  - Emulators: Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
 
 - **Previous State** (`state-previous-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_J (press)`
-  - Emulators: Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
 
 - **Next State** (`state-next-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_K (press)`
-  - Emulators: Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
 
 - **Save State** (`state-save-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_S (press)`
-  - Emulators: Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone), PCSX2 (Standalone), PPSSPP (Standalone), RetroArch
 
 - **Undo Load State** (`state-undo-load-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_8 (press)`
@@ -138,7 +141,7 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Undo Save State** (`state-undo-save-state`)
   - Hotkey: `KEY_LEFTCTRL + KEY_9 (press)`
-  - Emulators: Duckstation (Legacy), Dolphin (Standalone), Primehack (Standalone)
+  - Emulators: Duckstation (Legacy) (Standalone), Dolphin (Standalone), Primehack (Standalone)
 
 
 ### Display
@@ -147,23 +150,23 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Change Widescreen / Aspect Ratio** (`display-change-widescreen-aspect-ratio`)
   - Hotkey: `KEY_LEFTCTRL + KEY_W (press)`
-  - Emulators: Dolphin (Standalone), Duckstation (Legacy), PCSX2 (Standalone), PrimeHack (Standalone)
+  - Emulators: Dolphin (Standalone), Duckstation (Legacy) (Standalone), PCSX2 (Standalone), PrimeHack (Standalone)
 
 - **Swap Screens** (`display-swap-screens`)
   - Hotkey: `KEY_LEFTCTRL + KEY_TAB (press)`
-  - Emulators: Azahar, Cemu (Standalone), MelonDS (Standalone)
+  - Emulators: Azahar (Standalone), Cemu (Standalone), MelonDS (Standalone)
 
 - **Decrease Resolution / Upscale** (`display-decrease-resolution-upscale`)
   - Hotkey: `KEY_LEFTCTRL + KEY_Y (press)`
-  - Emulators: Dolphin (Standalone), Duckstation (Legacy), PCSX2 (Standalone), PrimeHack (Standalone)
+  - Emulators: Dolphin (Standalone), Duckstation (Legacy) (Standalone), PCSX2 (Standalone), PrimeHack (Standalone)
 
 - **Increase Resolution / Upscale** (`display-increase-resolution-upscale`)
   - Hotkey: `KEY_LEFTCTRL + KEY_U (press)`
-  - Emulators: Dolphin (Standalone), Duckstation (Legacy), PCSX2 (Standalone), PrimeHack (Standalone)
+  - Emulators: Dolphin (Standalone), Duckstation (Legacy) (Standalone), PCSX2 (Standalone), PrimeHack (Standalone)
 
 - **Fullscreen Toggle** (`display-fullscreen-toggle`)
   - Hotkey: `KEY_LEFTCTRL + KEY_ENTER (press)`
-  - Emulators: Azahar, Dolphin (Standalone), Duckstation (Legacy), MelonDS (Standalone), PCSX2 (Standalone), PrimeHack (Standalone)
+  - Emulators: Azahar (Standalone), Dolphin (Standalone), Duckstation (Legacy) (Standalone), MelonDS (Standalone), PCSX2 (Standalone), PrimeHack (Standalone)
 
 
 ### Speed
@@ -172,15 +175,15 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Decrease Emulation Speed** (`speed-decrease-emulation-speed`)
   - Hotkey: `KEY_LEFTCTRL + KEY_2 (press)`
-  - Emulators: Azahar, Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy), PCSX2 (Standalone)
+  - Emulators: Azahar (Standalone), Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy) (Standalone), PCSX2 (Standalone)
 
 - **Increase Emulation Speed** (`speed-increase-emulation-speed`)
   - Hotkey: `KEY_LEFTCTRL + KEY_1 (press)`
-  - Emulators: Azahar, Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy), PCSX2 (Standalone)
+  - Emulators: Azahar (Standalone), Dolphin (Standalone), Primehack (Standalone), Duckstation (Legacy) (Standalone), PCSX2 (Standalone)
 
 - **Reset Emulation Speed** (`speed-reset-emulation-speed`)
   - Hotkey: `KEY_LEFTCTRL + KEY_3 (press)`
-  - Emulators: Duckstation (Legacy)
+  - Emulators: Duckstation (Legacy) (Standalone)
 
 - **Frame Limit On/Off** (`speed-frame-limit-onoff`)
   - Hotkey: `KEY_LEFTCTRL + KEY_Z (press)`
@@ -192,11 +195,11 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Fast Forward** (`speed-fast-forward`)
   - Hotkey: `KEY_LEFTCTRL + KEY_KPPLUS (press)`
-  - Emulators: Duckstation (Legacy), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), MelonDS (Standalone), PCSX2 (Standalone), RetroArch
 
 - **Rewind** (`speed-rewind`)
   - Hotkey: `KEY_LEFTCTRL + KEY_KPMINUS (press)`
-  - Emulators: Duckstation (Legacy), RetroArch
+  - Emulators: Duckstation (Legacy) (Standalone), RetroArch
 
 
 ### Azahar
@@ -205,11 +208,11 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Load Amiibo** (`azahar-load-amiibo`)
   - Hotkey: `KEY_LEFTALT + KEY_M (press)`
-  - Emulators: Azahar
+  - Emulators: Azahar (Standalone)
 
 - **Remove Amiibo** (`azahar-remove-amiibo`)
   - Hotkey: `KEY_LEFTALT + KEY_N (press)`
-  - Emulators: Azahar
+  - Emulators: Azahar (Standalone)
 
 
 ### Dolphin
@@ -358,11 +361,11 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Escape** (`steam-escape`)
   - Hotkey: `KEY_ESC (press)`
-  - Emulators: GZDoom, IkemanGO, OpenBOR, PC-Systems, Ruffle, Ryubing (Standalone), Solarus
+  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ruffle (Standalone), Ryubing (Standalone), Solarus (Standalone)
 
 - **Enter** (`steam-enter`)
   - Hotkey: `KEY_ENTER (press)`
-  - Emulators: GZDoom, IkemanGO, OpenBOR, PC-Systems, Ryubing (Standalone), Solarus
+  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ryubing (Standalone), Solarus (Standalone)
 
 - **Space** (`steam-space`)
   - Hotkey: `KEY_SPACE (press)`
@@ -485,4 +488,4 @@ This file provides an overview of all actions defined in actions.json.
 - **Hotkey Actions**: 94
 - **Builtin Actions**: 2
 - **Categories**: 13
-- **Emulators**: 21
+- **Emulators**: 24
