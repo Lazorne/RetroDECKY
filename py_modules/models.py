@@ -13,6 +13,7 @@ class GameEvent:
 
 @dataclass
 class Paths:
+    esDeUserFolder: str
     esDeConfigFolder: str
     esDeDownloadedMediaFolder: str
     esDeDefaultEsSystemsFile: str

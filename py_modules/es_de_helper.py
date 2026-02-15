@@ -32,7 +32,15 @@ class EsDeHelper:
         return ''.join(result)
 
     def resolve_relative_media_path(self, rom_path: str, system_name: str, media_type: str) -> str:
-        rom_path_no_ext = os.path.splitext(rom_path)[0].replace("\\", "")
+        
+        rom_path = rom_path.replace("\\", "")
+
+        rom_path_no_ext = ""
+                
+        if os.path.isdir(rom_path):
+            rom_path_no_ext = rom_path
+        else:
+            rom_path_no_ext = os.path.splitext(rom_path)[0]
 
         roms_folder_normalized = os.path.normpath(self.paths.romsFolder)
         rom_path_normalized = os.path.normpath(rom_path_no_ext)
@@ -74,7 +82,39 @@ class EsDeHelper:
         for system in es_systems['systemList']['system']:
             self.es_systems[system['name']] = system
 
-        self.logger.info(f"Loaded {len(self.es_systems)} es-de systems")
+        self.logger.info(f"Loaded {len(self.es_systems)} es-de systems") 
+
+    def _preprocess_gamelist_xml(self, xml_string: str) -> dict:
+        xml_string = xml_string.lstrip()
+        if xml_string.startswith("<?xml"):
+            end = xml_string.find("?>")
+            if end != -1:
+                xml_string = xml_string[end + 2:].lstrip()
+
+        wrapped_xml = f"<wrapperRoot>{xml_string}</wrapperRoot>"
+
+        return wrapped_xml
+
+    def _load_gamelist_alternative_emulator(self, system_name: str):
+        gamelist_path = os.path.join(self.paths.esDeUserFolder, "gamelists", system_name, "gamelist.xml")
+        try:
+            with open(gamelist_path, "r") as f: 
+                xml_content = self._preprocess_gamelist_xml(f.read())
+                gamelist = xmltodict.parse(xml_content)['wrapperRoot']
+
+                if "alternativeEmulator" in gamelist:
+                    return gamelist['alternativeEmulator']['label']
+                
+                return None
+        except:
+            self.logger.error(f"Failed to load gamelist for system {system_name} at path {gamelist_path}")
+            return None
+        
+    def _resolve_emulator_by_command(self, command: dict) -> bool:
+        if(command['#text'].strip().startswith("%EMULATOR_RETROARCH%")):
+            return ["RetroArch", command['@label'].strip()]
+
+        return [command['@label'].strip()]
 
     def resolve_emulator_name(self, system_name: str) -> list[str]:
         if system_name not in self.es_systems:
@@ -82,15 +122,16 @@ class EsDeHelper:
 
         commands = self.es_systems[system_name]['command']
 
-        first_command = commands
+        command_list = commands if isinstance(commands, list) else [commands]
 
-        if isinstance(commands, list):
-            first_command = commands[0]
+        alt_emulator = self._load_gamelist_alternative_emulator(system_name)
+        if alt_emulator is not None:
 
-        if(first_command['#text'].strip().startswith("%EMULATOR_RETROARCH%")):
-            return ["RetroArch", first_command['@label'].strip()]
+            for command in command_list:
+                if command['@label'].strip() == alt_emulator.strip():
+                    return self._resolve_emulator_by_command(command)
 
-        return [first_command['@label'].strip()]
+        return self._resolve_emulator_by_command(command_list[0])
 
     def create_es_de_event_scripts(self, apiBaseUrl: str):
         scripts = [

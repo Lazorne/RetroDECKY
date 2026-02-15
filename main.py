@@ -129,6 +129,7 @@ class Plugin:
         self.loop = asyncio.get_event_loop()
 
         self.paths = Paths(
+            esDeUserFolder=os.path.join(decky.DECKY_USER_HOME, "retrodeck", "ES-DE"),
             esDeConfigFolder=os.path.join(decky.DECKY_USER_HOME, ".var", "app", "net.retrodeck.retrodeck", "config", "ES-DE"),
             esDeDownloadedMediaFolder=os.path.join(decky.DECKY_USER_HOME, "retrodeck", "ES-DE", "downloaded_media"),
             esDeDefaultEsSystemsFile=os.path.join(decky.DECKY_PLUGIN_DIR, "presets", "es_systems.xml"),

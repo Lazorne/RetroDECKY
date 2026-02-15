@@ -17,7 +17,7 @@ export const filterActions = (actions: Action[], gameEvent: GameEvent): Action[]
                 const emulatorRequirement = typeof emulator === 'string' ? [emulator] : emulator;
 
                 return emulatorRequirement.every((e, i) => {
-                    return e === gameEvent.emulator_name[i];
+                    return e?.toLowerCase() === gameEvent.emulator_name[i]?.toLowerCase();
                 });
             });
         });
