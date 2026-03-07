@@ -161,6 +161,10 @@ class Plugin:
         pass
 
     async def _uninstall(self):
+        try:
+            self.es_de_helper.remove_es_de_event_scripts()
+        except Exception as e:
+            decky.logger.error(f"Error removing es-de event scripts: {e}")
         decky.logger.info("Uninstalled RetroDeck plugin")
         pass
 

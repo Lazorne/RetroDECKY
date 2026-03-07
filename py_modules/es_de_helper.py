@@ -163,6 +163,24 @@ class EsDeHelper:
 
         return True
 
+    def remove_es_de_event_scripts(self) -> bool:
+        scripts = [
+            ["game-start", "game_start_decky.sh"],
+            ["game-end", "game_end_decky.sh"],
+        ]
+
+        for script_name, script_file in scripts:
+            target_folder = os.path.join(self.paths.esDeConfigFolder, "scripts", script_name)
+            target = os.path.join(target_folder, script_file)
+
+            if os.path.exists(target):
+                os.remove(target)
+                if os.path.exists(target):
+                    return False
+                self.logger.info(f"Removed es-de event script: {target}")
+
+        return True
+
     def __init__(self, logger: Logger, paths: Paths):
         self.logger = logger
         self.paths = paths

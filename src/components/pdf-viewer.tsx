@@ -1,3 +1,11 @@
+
+
+/*
+ NOTE: This component is still quite messy and serves
+ as a proof of concept for PDF viewing and controller
+ navigation. It will be refined and cleaned up later.
+*/
+
 import { useEffect, useRef, useState } from 'react';
 
 import { useMenuContext } from '../context';
@@ -49,7 +57,8 @@ export const PdfViewer = () => {
                 url: gameEvent.manual_path.replace(/\\/g, ""),
                 useSystemFonts: true,
                 disableFontFace: true,
-                verbosity: pdfjsLib.VerbosityLevel.INFOS
+                verbosity: pdfjsLib.VerbosityLevel.INFOS,
+                wasmUrl: "/plugins/RetroDecky/dist/pdfjs-dist/wasm/"
             }).promise;
         pdfRef.current = pdf;
         setViewState((prev) => ({

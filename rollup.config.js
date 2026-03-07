@@ -17,6 +17,14 @@ export default deckyPlugin({
           dest: 'dist/retrodeck-icons'
         }
       ]
+    }),
+    copy({
+      targets: [
+        {
+          src: "node_modules/pdfjs-dist/wasm/*",
+          dest: "dist/pdfjs-dist/wasm"
+        }
+      ]
     })
   ],
 })
