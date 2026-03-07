@@ -25,11 +25,10 @@ This file provides an overview of all actions defined in actions.json.
 - RPCS3 Shortcut (Standalone)
 - RetroArch
 - Ruffle (Standalone)
-- Ryubing (Standalone)
 - ScummVM
 - Solarus (Standalone)
 
-**Total: 24 emulator(s)**
+**Total: 23 emulator(s)**
 
 ## Categories and Actions
 
@@ -67,7 +66,7 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Escape** (`quick-escape`)
   - Hotkey: `KEY_ESC (press)`
-  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ryubing (Standalone), Ruffle (Standalone), Solarus (Standalone)
+  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ruffle (Standalone), Solarus (Standalone)
 
 - **Open Menu** (`quick-open-menu`)
   - Hotkey: `KEY_LEFTCTRL + KEY_M (press)`
@@ -361,11 +360,11 @@ This file provides an overview of all actions defined in actions.json.
 
 - **Escape** (`steam-escape`)
   - Hotkey: `KEY_ESC (press)`
-  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ruffle (Standalone), Ryubing (Standalone), Solarus (Standalone)
+  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ruffle (Standalone), Solarus (Standalone)
 
 - **Enter** (`steam-enter`)
   - Hotkey: `KEY_ENTER (press)`
-  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Ryubing (Standalone), Solarus (Standalone)
+  - Emulators: GZDoom (Standalone), IkemanGO (Standalone), OpenBOR (Standalone), PC-Systems, Solarus (Standalone)
 
 - **Space** (`steam-space`)
   - Hotkey: `KEY_SPACE (press)`
@@ -461,31 +460,10 @@ This file provides an overview of all actions defined in actions.json.
   - Emulators: ScummVM
 
 
-### Switch
-
-*4 action(s)*
-
-- **Load / Remove Amiibo** (`switch-load-remove-amiibo`)
-  - Hotkey: `KEY_LEFTALT + KEY_M (press)`
-  - Emulators: Ryubing (Standalone)
-
-- **Docked / Undocked Mode** (`switch-docked-undocked-mode`)
-  - Hotkey: `KEY_LEFTALT + KEY_D (press)`
-  - Emulators: Ryubing (Standalone)
-
-- **Change GPU Accuracy** (`switch-change-gpu-accuracy`)
-  - Hotkey: `KEY_LEFTALT + KEY_G (press)`
-  - Emulators: Ryubing (Standalone)
-
-- **Open Menu Ryubing - F4** (`switch-open-menu-ryubing-f4`)
-  - Hotkey: `KEY_F4 (press)`
-  - Emulators: Ryubing (Standalone)
-
-
 ## Statistics
 
-- **Total Actions**: 96
-- **Hotkey Actions**: 94
+- **Total Actions**: 92
+- **Hotkey Actions**: 90
 - **Builtin Actions**: 2
-- **Categories**: 13
-- **Emulators**: 24
+- **Categories**: 12
+- **Emulators**: 23

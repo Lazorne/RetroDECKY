@@ -139,13 +139,7 @@ ACTION_GROUPS = {
         "scummvm-push-shove",
         "scummvm-pull-yank",
         "scummvm-fight",
-    ],
-    "switch": [
-        "switch-load-remove-amiibo",
-        "switch-docked-undocked-mode",
-        "switch-change-gpu-accuracy",
-        "switch-open-menu-ryubing-f4",
-    ],
+    ]
 }
 
 # Define the order of categories in the output
@@ -163,8 +157,7 @@ CATEGORY_ORDER = [
     "Mame",
     "Retroarch",
     "Steam",
-    "Scummvm",
-    "Switch",
+    "Scummvm"
 ]
 
 
@@ -191,7 +184,6 @@ EMULATOR_EXPANDS: Dict[str, List[str]] = {
     ],
     "RetroArch": ["RetroArch"],
     "Ruffle": ["Ruffle (Standalone)"],
-    "Ryubing (Standalone)": ["Ryubing (Standalone)"],
     "ScummVM": ["ScummVM"],
     "Solarus": ["Solarus (Standalone)"],
 }
@@ -515,15 +507,19 @@ def parse_html(html: str) -> List[Dict]:
 
 def modify_actions(actions: List[Dict]) -> List[Dict]:
     """Modify actions to fit the needs of the user."""
-    # For category "Switch", always use ["Ryubing (Standalone)"] as emulators
-    for action in actions:
-        category = action.get("category", "")
-        if category == "Switch":
-            action["emulators"] = ["Ryubing (Standalone)"]
 
+    # Filter out Switch category actions - use list comprehension to avoid iteration issues
+    actions = [action for action in actions if action.get("category", "").lower() != "switch"]
+
+    # Remove Ryubing (Standalone) from emulator lists
     for action in actions:
-        if action.get("name", "").lower() == "quit component":
-            actions.remove(action)
+        emulators = action.get("emulators", [])
+        if isinstance(emulators, list):
+            # Create new list without Ryubing (Standalone)
+            action["emulators"] = [e for e in emulators if e != "Ryubing (Standalone)"]
+
+    # Filter out "quit component" actions - use list comprehension
+    actions = [action for action in actions if action.get("name", "").lower() != "quit component"]
 
     # Define View Manual action (first in Quick Menu)
     view_manual_action = {

@@ -188,7 +188,6 @@
       "IkemanGO (Standalone)",
       "OpenBOR (Standalone)",
       "PC-Systems",
-      "Ryubing (Standalone)",
       "Ruffle (Standalone)",
       "Solarus (Standalone)"
     ]
@@ -1590,7 +1589,6 @@
       "OpenBOR (Standalone)",
       "PC-Systems",
       "Ruffle (Standalone)",
-      "Ryubing (Standalone)",
       "Solarus (Standalone)"
     ]
   },
@@ -1617,7 +1615,6 @@
       "IkemanGO (Standalone)",
       "OpenBOR (Standalone)",
       "PC-Systems",
-      "Ryubing (Standalone)",
       "Solarus (Standalone)"
     ]
   },
@@ -2104,89 +2101,6 @@
     ],
     "emulators": [
       "ScummVM"
-    ]
-  },
-  {
-    "id": "switch-load-remove-amiibo",
-    "name": "Load / Remove Amiibo",
-    "category": "Switch",
-    "icon": {
-      "type": "path",
-      "value": "RD-preferences-desktop-accessibility"
-    },
-    "action": {
-      "type": "hotkey",
-      "operation": "press",
-      "keys": [
-        "KEY_LEFTALT",
-        "KEY_M"
-      ]
-    },
-    "systems": "*",
-    "emulators": [
-      "Ryubing (Standalone)"
-    ]
-  },
-  {
-    "id": "switch-docked-undocked-mode",
-    "name": "Docked / Undocked Mode",
-    "category": "Switch",
-    "icon": {
-      "type": "path",
-      "value": "RD-emblem-unlocked"
-    },
-    "action": {
-      "type": "hotkey",
-      "operation": "press",
-      "keys": [
-        "KEY_LEFTALT",
-        "KEY_D"
-      ]
-    },
-    "systems": "*",
-    "emulators": [
-      "Ryubing (Standalone)"
-    ]
-  },
-  {
-    "id": "switch-change-gpu-accuracy",
-    "name": "Change GPU Accuracy",
-    "category": "Switch",
-    "icon": {
-      "type": "path",
-      "value": "RD-emblem-new"
-    },
-    "action": {
-      "type": "hotkey",
-      "operation": "press",
-      "keys": [
-        "KEY_LEFTALT",
-        "KEY_G"
-      ]
-    },
-    "systems": "*",
-    "emulators": [
-      "Ryubing (Standalone)"
-    ]
-  },
-  {
-    "id": "switch-open-menu-ryubing-f4",
-    "name": "Open Menu Ryubing - F4",
-    "category": "Switch",
-    "icon": {
-      "type": "path",
-      "value": "RD-F4"
-    },
-    "action": {
-      "type": "hotkey",
-      "operation": "press",
-      "keys": [
-        "KEY_F4"
-      ]
-    },
-    "systems": "*",
-    "emulators": [
-      "Ryubing (Standalone)"
     ]
   }
 ]
