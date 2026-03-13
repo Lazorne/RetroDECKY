@@ -16,11 +16,11 @@ const RETRODECK_APP_NAME = 'RetroDECK';
 
 export function findRetroDeckApp(): AppOverview | undefined {
   return appStore.allApps.find(
-    (app) => app.display_name.toLowerCase() === RETRODECK_APP_NAME.toLowerCase()
+    (app) => app.display_name.toLowerCase().trim() === RETRODECK_APP_NAME.toLowerCase().trim()
   );
 }
 
-export function startRetrodeck() {
+export function startRetroDeck() {
   const app = findRetroDeckApp();
   if (!app) {
     console.warn("RetroDecky: Could not find RetroDeck app in Steam library");
@@ -29,5 +29,5 @@ export function startRetrodeck() {
   SteamClient.Apps.RunGame(app.m_gameid, "", -1, 100);
 }
 
-export const startRetroDeckOnStartup = debounce(startRetrodeck, 200);
+export const startRetroDeckOnStartup = debounce(startRetroDeck, 200);
 
