@@ -8,21 +8,6 @@ import { getIconPath } from "../utils";
 import { getSettingBe } from "../backend";
 import { ActionModal } from "./action-modal";
 
-const useFocusElement = (focusedElement: string | null, elementId: string): { ref: RefObject<HTMLDivElement | null>, isFocused: boolean } => {
-    const ref = useRef<HTMLDivElement>(null);
-    const isFocused = focusedElement === elementId;
-
-    useEffect(() => {
-        if (isFocused && ref.current) {
-            ref.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            const button = ref.current.querySelector("button");
-            button?.focus();
-        }
-    }, [isFocused]);
-
-    return { ref, isFocused };
-};
-
 export const ActionsComponent = () => {
     const { displayedActions } = useMenuContext();
     const [showManualButton, setShowManualButton] = useState(false);
@@ -62,19 +47,22 @@ export const ActionsComponent = () => {
         }, {} as Record<string, Action[]>);
 
 
+    const categoryEntries = Object.entries(categorizedActions);
+    const firstCategoryIsFirst = uncategorizedActions.length === 0;
+
     return <div>
-        {uncategorizedActions.map((action) => (
-            <ActionComponent action={action} key={action.id} />
+        {uncategorizedActions.map((action, index) => (
+            <ActionComponent action={action} key={action.id} isFirst={index === 0} />
         ))}
-        {Object.entries(categorizedActions).map(([category, actionsForCategory]) => (
-            <CategoryComponent category={category} actionsForCategory={actionsForCategory} key={category} />
+        {categoryEntries.map(([category, actionsForCategory], index) => (
+            <CategoryComponent category={category} actionsForCategory={actionsForCategory} key={category} isFirst={firstCategoryIsFirst && index === 0} />
         ))}
     </div>;
 }
 
-export const CategoryComponent = ({ category, actionsForCategory }: { category: string, actionsForCategory: Action[] }) => {
+export const CategoryComponent = ({ category, actionsForCategory, isFirst }: { category: string, actionsForCategory: Action[], isFirst?: boolean }) => {
     const { openedCategory, setOpenedCategory, focusedElement, setFocusedElement } = useMenuContext();
-    const { ref } = useFocusElement(focusedElement, `category:${category}`);
+    const { ref } = useFocusElement(focusedElement, `category:${category}`, isFirst);
 
     return <div key={category} ref={ref}>
         <ActionButton
@@ -98,9 +86,9 @@ export const CategoryComponent = ({ category, actionsForCategory }: { category: 
     </div>;
 }
 
-export const ActionComponent = ({ action }: { action: Action }) => {
+export const ActionComponent = ({ action, isFirst }: { action: Action, isFirst?: boolean }) => {
     const { handleAction, gameEvent, focusedElement, setFocusedElement } = useMenuContext();
-    const { ref, isFocused } = useFocusElement(focusedElement, `action:${action.id}`);
+    const { ref, isFocused } = useFocusElement(focusedElement, `action:${action.id}`, isFirst);
 
     if (!gameEvent) {
         return <div />;
@@ -202,3 +190,35 @@ const ActionButton = (props: ActionButtonProps) => {
         </PanelSectionRow>
     </div>;
 }
+
+const getScrollParent = (element: HTMLElement): HTMLElement | null => {
+    let parent = element.parentElement;
+    while (parent) {
+        const { overflow, overflowY } = getComputedStyle(parent);
+        if (['auto', 'scroll'].includes(overflow) || ['auto', 'scroll'].includes(overflowY)) {
+            return parent;
+        }
+        parent = parent.parentElement;
+    }
+    return null;
+};
+
+const useFocusElement = (focusedElement: string | null, elementId: string, scrollToTop?: boolean): { ref: RefObject<HTMLDivElement | null>, isFocused: boolean } => {
+    const ref = useRef<HTMLDivElement>(null);
+    const isFocused = focusedElement === elementId;
+
+    useEffect(() => {
+        if (isFocused && ref.current) {
+            if (scrollToTop) {
+                const scrollParent = getScrollParent(ref.current);
+                scrollParent?.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                ref.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            const button = ref.current.querySelector("button");
+            button?.focus();
+        }
+    }, [isFocused]);
+
+    return { ref, isFocused };
+};
