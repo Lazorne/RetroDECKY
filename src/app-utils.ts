@@ -16,7 +16,7 @@ const RETRODECK_APP_NAME = 'RetroDECK';
 
 export function findRetroDECKApp(): AppOverview | undefined {
   return appStore.allApps.find(
-    (app) => app.display_name.toLowerCase().trim() === RETRODECK_APP_NAME.toLowerCase().trim()
+    (app) => app.display_name.trim() === RETRODECK_APP_NAME.trim()
   );
 }
 
