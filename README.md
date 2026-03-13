@@ -5,6 +5,7 @@ An Ingame Menu for RetroDECK as Decky Plugin. Allows to use emulator actions wit
 <img src="./assets/screenshot1.png" alt="RetroDECKY Screenshot" width="200"/>
 <img src="./assets/screenshot2.png" alt="RetroDECKY Screenshot" width="200"/>
 <img src="./assets/screenshot3.png" alt="RetroDECKY Screenshot" width="200"/>
+<img src="./assets/screenshot4.png" alt="RetroDECKY Screenshot" width="600"/>
 </p>
 
 ## Goal of the plugin
