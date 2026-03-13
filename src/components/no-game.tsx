@@ -1,5 +1,5 @@
 import { PanelSection } from "@decky/ui";
-import retrodeckLogo from "../../assets/retrodeck-logo.png";
+import retrodeckLogo from "../../assets/logo/icon-RetroDECKY.svg";
 import { SetupGuide } from "./setup-guide";
 import { Settings } from "./settings";
 
@@ -12,7 +12,7 @@ export const NoGame = () => {
                 marginTop: '20px',
                 marginBottom: '20px'
             }}>
-                <img src={retrodeckLogo} width={80} height={80} />
+                <img src={retrodeckLogo} width={90} height={90} />
             </div>
             <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '20px' }}>
                 <strong>No game is currently running.</strong>
