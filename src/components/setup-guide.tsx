@@ -6,7 +6,7 @@ import { useMenuContext } from "../context";
 
 const isDoneIcon = (isDone: boolean | undefined) => isDone ? "✅" : "❌";
 
-const githubUrl = "https://github.com/Teppichseite/RetroDecky";
+const githubUrl = "https://github.com/Teppichseite/RetroDECKY";
 
 export const SetupGuide = () => {
     const [showGuide, setShowGuide] = useState(false);
@@ -26,7 +26,7 @@ export const SetupGuide = () => {
         </ButtonItem>
         {
             showGuide && <div style={{ marginTop: '20px' }}>
-                {!isSetup ? <RetroDeckNotInstalled /> : <RetroDeckEventScriptsEnableGuide />}
+                {!isSetup ? <RetroDECKNotInstalled /> : <RetroDECKEventScriptsEnableGuide />}
                 <div
                     style={{ overflowWrap: 'break-word', marginTop: '30px' }}
                 >Please visit <strong>{githubUrl}</strong> if you encounter any issues.</div>
@@ -35,32 +35,32 @@ export const SetupGuide = () => {
     </div>;
 };
 
-export const RetroDeckNotInstalled = () => {
+export const RetroDECKNotInstalled = () => {
 
     const { setupState } = useMenuContext();
 
     return <div>
-        <h4>RetroDeck is not fully installed on your system</h4>
+        <h4>RetroDECK is not fully installed on your system</h4>
         <ol style={{ paddingInlineStart: '25px' }}>
             <li>
-                {isDoneIcon(setupState?.isRetrodeckFlatpakInstalled)} RetroDeck Flatpak is installed
+                {isDoneIcon(setupState?.isRetrodeckFlatpakInstalled)} RetroDECK Flatpak is installed
             </li>
             <li>
                 {isDoneIcon(setupState?.areEsDeEventScriptsCreated)} ES-DE event scripts got created
             </li>
         </ol>
         <div>
-            To reload this page go to <strong>Decky Settings {">"} Plugins {">"} RetroDecky {">"} Reload</strong>
+            To reload this page go to <strong>Decky Settings {">"} Plugins {">"} RetroDECKY {">"} Reload</strong>
         </div>
     </div>;
 };
 
-export const RetroDeckEventScriptsEnableGuide = () => {
+export const RetroDECKEventScriptsEnableGuide = () => {
     return <div>
         <h4>Please follow the steps to fully setup the plugin</h4>
         <ol style={{ paddingInlineStart: '25px' }}>
             <li>
-                Open RetroDeck and open the <strong>regular Menu</strong>
+                Open RetroDECK and open the <strong>regular Menu</strong>
             </li>
             <li>
                 Navigate to <strong>ES-DE Configurations {">"} Other Settings</strong>
@@ -69,7 +69,7 @@ export const RetroDeckEventScriptsEnableGuide = () => {
                 Enable <strong>Custom Event Scripts</strong>
             </li>
             <li>
-                <strong>Restart</strong> RetroDeck
+                <strong>Restart</strong> RetroDECK
             </li>
         </ol>
     </div>;

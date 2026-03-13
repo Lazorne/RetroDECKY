@@ -135,8 +135,8 @@ class EsDeHelper:
 
     def create_es_de_event_scripts(self, apiBaseUrl: str):
         scripts = [
-            ["game-start", "game_start_decky.sh", "game_start"],
-            ["game-end", "game_end_decky.sh", "game_end"],
+            ["game-start", "game_start_RetroDECKY_v1.sh", "game_start"],
+            ["game-end", "game_end_RetroDECKY_v1.sh", "game_end"],
         ]
 
         for script_name, script_file, event_type in scripts:

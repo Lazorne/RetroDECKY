@@ -12,7 +12,7 @@ import { Menu } from "./components/menu";
 import { getSettingBe } from "./backend";
 import { SteamClient } from "@decky/ui/dist/globals/steam-client";
 import { EUIMode } from "@decky/ui/dist/globals/steam-client/shared";
-import { startRetroDeckOnStartup } from "./app-utils";
+import { startRetroDECKOnStartup } from "./app-utils";
 
 declare var SteamClient: SteamClient;
 
@@ -23,14 +23,14 @@ function Content() {
 }
 
 export default definePlugin(() => {
-  console.log("RetroDecky plugin initializing");
+  console.log("RetroDECKY plugin initializing");
 
   const uiModeSubscription = SteamClient.UI.RegisterForUIModeChanged((mode) => {
     if (mode !== EUIMode.GamePad) return;
 
     getSettingBe("autoStartEnabled").then((enabled) => {
       if (!enabled) return;
-      startRetroDeckOnStartup();
+      startRetroDECKOnStartup();
     });
   });
 
@@ -41,8 +41,8 @@ export default definePlugin(() => {
   });
 
   return {
-    name: "RetroDecky",
-    titleView: <div className={staticClasses.Title}>RetroDecky</div>,
+    name: "RetroDECKY",
+    titleView: <div className={staticClasses.Title}>RetroDECKY</div>,
     content: <Content />,
     icon: <FaGamepad />,
     onDismount() {

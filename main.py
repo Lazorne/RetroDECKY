@@ -119,7 +119,7 @@ class Plugin:
 
         if output.returncode != 0:
             self.is_retrodeck_flatpak_installed = False
-            decky.logger.error(f"Failed to check RetroDeck flatpak installation: {output.stderr.decode()}")
+            decky.logger.error(f"Failed to check RetroDECK flatpak installation: {output.stderr.decode()}")
             return False
 
         self.is_retrodeck_flatpak_installed = True
@@ -143,7 +143,7 @@ class Plugin:
 
         self._check_retrodeck_flatpak()
         if not self.is_retrodeck_flatpak_installed:
-            decky.logger.error("RetroDeck flatpak is not installed")
+            decky.logger.error("RetroDECK flatpak is not installed")
             return
 
         self.paths = PathsResolver(decky.DECKY_USER_HOME, decky.DECKY_PLUGIN_DIR, decky.logger).resolve()
@@ -163,10 +163,10 @@ class Plugin:
 
         self._load_actions()
 
-        decky.logger.info("Loaded RetroDeck plugin")
+        decky.logger.info("Loaded RetroDECKY plugin")
 
     async def _unload(self):
-        decky.logger.info("Unloaded RetroDeck plugin")
+        decky.logger.info("Unloaded RetroDECKY plugin")
         pass
 
     async def _uninstall(self):
@@ -174,8 +174,8 @@ class Plugin:
             self.es_de_helper.remove_es_de_event_scripts()
         except Exception as e:
             decky.logger.error(f"Error removing es-de event scripts: {e}")
-        decky.logger.info("Uninstalled RetroDeck plugin")
+        decky.logger.info("Uninstalled RetroDECKY plugin")
         pass
 
     async def _migration(self):
-        decky.logger.info("Migrating RetroDeck plugin")
+        decky.logger.info("Migrating RetroDECKY plugin")
