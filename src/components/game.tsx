@@ -7,7 +7,7 @@ export function Game() {
     const { gameEvent } = useMenuContext();
 
     if (!gameEvent) {
-        return <div/>;
+        return <div />;
     }
 
     return <div>
@@ -32,5 +32,5 @@ export function Game() {
             </div>
             <ActionsComponent />
         </PanelSection>
-    </div>;
+    </div >;
 };

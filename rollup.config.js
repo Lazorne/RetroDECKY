@@ -7,7 +7,7 @@ export default deckyPlugin({
     url({
       include: ['**/pdfjs-dist/build/pdf.worker.min.mjs'],
       limit: 0,
-      publicPath: `http://127.0.0.1:1337/plugins/RetroDecky/dist/`,
+      publicPath: `http://127.0.0.1:1337/plugins/RetroDECKY/dist/`,
       fileName: 'pdf.worker.min.mjs'
     }),
     copy({

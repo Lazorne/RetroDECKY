@@ -11,6 +11,7 @@ from dataclasses import asdict
 import json
 
 import decky
+from settings import SettingsManager
 
 class Plugin:
     actions: list[dict] = None
@@ -22,6 +23,8 @@ class Plugin:
     es_de_helper: EsDeHelper = None
 
     game_event: GameEvent = None
+
+    settings: SettingsManager = None
 
     states: dict[str, str] = dict()
 
@@ -116,7 +119,7 @@ class Plugin:
 
         if output.returncode != 0:
             self.is_retrodeck_flatpak_installed = False
-            decky.logger.error(f"Failed to check RetroDeck flatpak installation: {output.stderr.decode()}")
+            decky.logger.error(f"Failed to check RetroDECK flatpak installation: {output.stderr.decode()}")
             return False
 
         self.is_retrodeck_flatpak_installed = True
@@ -124,14 +127,23 @@ class Plugin:
 
     async def check_setup_state(self) -> [bool, bool]:
         return self.is_retrodeck_flatpak_installed, self.are_es_de_event_scripts_created
-        
+
+    async def get_setting(self, key: str):
+        return self.settings.getSetting(key)
+
+    async def set_setting(self, key: str, value):
+        self.settings.setSetting(key, value)
+        self.settings.commit()
 
     async def _main(self):
         self.loop = asyncio.get_event_loop()
 
+        self.settings = SettingsManager(name="settings", settings_directory=decky.DECKY_PLUGIN_SETTINGS_DIR)
+        self.settings.read()
+
         self._check_retrodeck_flatpak()
         if not self.is_retrodeck_flatpak_installed:
-            decky.logger.error("RetroDeck flatpak is not installed")
+            decky.logger.error("RetroDECK flatpak is not installed")
             return
 
         self.paths = PathsResolver(decky.DECKY_USER_HOME, decky.DECKY_PLUGIN_DIR, decky.logger).resolve()
@@ -151,10 +163,10 @@ class Plugin:
 
         self._load_actions()
 
-        decky.logger.info("Loaded RetroDeck plugin")
+        decky.logger.info("Loaded RetroDECKY plugin")
 
     async def _unload(self):
-        decky.logger.info("Unloaded RetroDeck plugin")
+        decky.logger.info("Unloaded RetroDECKY plugin")
         pass
 
     async def _uninstall(self):
@@ -162,8 +174,8 @@ class Plugin:
             self.es_de_helper.remove_es_de_event_scripts()
         except Exception as e:
             decky.logger.error(f"Error removing es-de event scripts: {e}")
-        decky.logger.info("Uninstalled RetroDeck plugin")
+        decky.logger.info("Uninstalled RetroDECKY plugin")
         pass
 
     async def _migration(self):
-        decky.logger.info("Migrating RetroDeck plugin")
+        decky.logger.info("Migrating RetroDECKY plugin")

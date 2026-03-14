@@ -58,7 +58,7 @@ export const PdfViewer = () => {
                 useSystemFonts: true,
                 disableFontFace: true,
                 verbosity: pdfjsLib.VerbosityLevel.INFOS,
-                wasmUrl: "/plugins/RetroDecky/dist/pdfjs-dist/wasm/"
+                wasmUrl: "/plugins/RetroDECKY/dist/pdfjs-dist/wasm/"
             }).promise;
         pdfRef.current = pdf;
         setViewState((prev) => ({

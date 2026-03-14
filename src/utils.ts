@@ -51,5 +51,5 @@ export const adjustCategories = (actions: Action[]): Action[] => {
 }
 
 export const getIconPath = (iconName: string) => {
-    return `http://127.0.0.1:1337/plugins/RetroDecky/dist/retrodeck-icons/${iconName}.png`;
+    return `http://127.0.0.1:1337/plugins/RetroDECKY/dist/retrodeck-icons/${iconName}.png`;
 }
