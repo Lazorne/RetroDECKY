@@ -1,7 +1,7 @@
 # RetroDECKY
 
 <p>
-  <img src="./assets/logo/icon-RetroDECKY.svg" alt="RetroDECKY logo" width="75">
+  <img src="./assets/logo/icon-RetroDECKY.svg" alt="RetroDECKY logo" width="100">
 </p>
 
 
@@ -67,7 +67,7 @@ Before you can install **RetroDECKY** ensure the following are installed:
 
 ### Install RetroDECK
 
-  <img src="./assets/logo/icon-RetroDECK.svg" alt="RetroDECK logo" width="35">
+<img src="./assets/logo/icon-RetroDECK.svg" alt="RetroDECK logo" width="45">
 
 RetroDECK must be installed before using the plugin.
 
@@ -116,7 +116,7 @@ Choose one of the following methods:
 2. The script sends the games metadata and assets to the plugin backend.
 3. The plugin updates the menu with metadata and assets based on the detected game in combination with what system.
 
-### Detected ES-DE Metadata
+#### Detected ES-DE Metadata
 
 The plugin automatically resolves assets using **ES-DE** metadata directories under `retrodeck/ES-DE/`.
 
