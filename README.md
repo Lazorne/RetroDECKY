@@ -2,8 +2,6 @@
 
 **RetroDECKY** is a Decky Plugin for the all-in-on Retro Gaming Platform [RetroDECK](https://retrodeck.readthedocs.io/en/latest/). 
 
----
-
 ## Screenshots
 
 <p>
@@ -51,14 +49,11 @@ RetroDECKY addresses these issues by providing a **content-aware** in-game menu 
 
 ---
 
+## Requirements for RetroDECKY: Decky Loader and RetroDECK
 
-## How-to Install RetroDECKY
+Before you can install **RetroDECKY** ensure the following are installed:
 
-### Prerequisites: Decky Loader and RetroDECK
-
-Before installing **RetroDECKY** ensure the following are installed:
-
-**Install RetroDECK**
+### Install RetroDECK
 
 RetroDECK must be installed before using the plugin.
 
@@ -66,7 +61,7 @@ RetroDECK must be installed before using the plugin.
 
 Ensure you read the **Steam Deck** installation section.
 
-**Install Decky Loader**
+### Install Decky Loader
 
 Decky Loader is required to run the RetroDECKY plugin.
 
@@ -75,13 +70,14 @@ Decky Loader is required to run the RetroDECKY plugin.
 
 ---
 
+## How-to Install RetroDECKY
+
 ### Step 1: Install the Plugin
 
 Choose one of the following methods:
 
-1. Install from the **Decky Plugin Store** *(not yet available)*  
-2. Download and install from the **GitHub Releases page**  
-3. **Build the plugin manually** from source
+- Install from the **Decky Plugin Store** *(not yet available, but will be the recommended path)* 
+- Download and install from the **GitHub Releases page**.
 
 ---
 
@@ -94,7 +90,7 @@ Choose one of the following methods:
 
 ---
 
-## Architecture
+## Architecture: How does it work?
 
 RetroDECKY integrates with RetroDECK using through ES-DE event scripts.
 
@@ -141,7 +137,7 @@ Media files are served through a **local HTTP server** and displayed within the 
 
 ## Acknowledgements
 
-- RetroDECK logo, icons, and configuration files originate from the RetroDECK project: https://github.com/RetroDECK/RetroDECK and corresponding licences check other_licences.txt
+- RetroDECK logo, icons, and configuration files originate from the RetroDECK project: https://github.com/RetroDECK/RetroDECK and corresponding licenses check other_licenses.txt
 
 - The release workflow is based on: https://github.com/aarron-lee/SimpleDeckyTDP/blob/main/.github/workflows/release.y
 
