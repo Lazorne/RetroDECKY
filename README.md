@@ -38,19 +38,17 @@ RetroDECKY addresses these issues by providing a **content-aware** in-game menu 
 
 ---
 
-
-
 ## Features
 
-- **Component Hotkey Information** - Displays hotkey actions specific to the currently running component.
+- **Running Game Actions** - Displays hotkey actions specific to the currently running game.
 
-- **RetroDECKY Hotkey Triggering** - Execute hotkey functions through Decky menu buttons instead of keyboard hotkeys, button combos or radial menus.
+- **Running Game Information** - Displays data from ES-DE such as artwork, covers and metadata.
+
+- **Hotkey Triggering** - Execute hotkey functions through Decky menu buttons instead of keyboard hotkeys, button combos or radial menus.
 
 - **Boot into RetroDECK** - A function to automatically start RetroDECK when Steam launches in Game Mode.
 
 - **PDF Manual Viewer** - Read game manuals without leaving the game session.
-
-- **Game Information** - Displays basic metadata such as game title, system, and cover image.
 
 ---
 
